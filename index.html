@@ -50,7 +50,6 @@
     nav a:hover {
       color: #64ffda;
     }
-
     section {
       max-width: 1000px;
       margin: 60px auto;
@@ -63,6 +62,88 @@
       padding-left: 10px;
       font-size: 1.6em;
     }
-
     .projects {
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .project {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    }
+    .project h3 {
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+    .project p {
+      color: #475569;
+    }
+    footer {
+      text-align: center;
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 30px 10px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #64ffda;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://avatars.githubusercontent.com/u/yourgithubid?v=4" alt="Photo de profil">
+    <h1>Yahya Bougna</h1>
+    <p>Ingénieur cybersécurité & cloud | Passionné par l’innovation et la sécurité des systèmes</p>
+  </header>
+
+  <nav>
+    <a href="#about">À propos</a>
+    <a href="#projects">Projets</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>À propos de moi</h2>
+    <p>Je suis ingénieur en cybersécurité, diplômé de l’ISEO, avec une expérience solide dans la gestion des risques, la conformité DORA, la sécurité des accès (Keycloak, Varonis, KeePass) et la protection des systèmes d’information. J’aime concevoir des solutions robustes et accessibles, tout en explorant les innovations du cloud et de la sécurité des infrastructures.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Mes projets</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>🔐 Sécurisation du SI – Ensemble Protection Sociale</h3>
+        <p>Projet de réduction des risques cyber (conformité DORA, Varonis, KeePass, phishing, etc.).</p>
+      </div>
+      <div class="project">
+        <h3>☁️ Déploiement Cloud sécurisé</h3>
+        <p>Mise en place d’une infrastructure de test cloud avec authentification et sauvegarde automatisée via Veeam.</p>
+      </div>
+      <div class="project">
+        <h3>💻 Formation en administration système</h3>
+        <p>Configuration de VM ESXi, supervision réseau et intégration de solutions DevOps pour la sécurité.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 <a href="mailto:yahya.bougna@gmail.com">yahya.bougna@gmail.com</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/yahya-bougna" target="_blank">LinkedIn</a></p>
+    <p>💼 <a href="https://github.com/yaya237" target="_blank">GitHub</a></p>
+  </section>
+
+  <footer>
+    © 2025 Yahya Bougna — Tous droits réservés.
+  </footer>
+</body>
+</html>
