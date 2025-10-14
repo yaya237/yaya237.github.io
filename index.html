@@ -12,12 +12,14 @@
       background-color: #f9fafb;
       color: #0f172a;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
     header {
       text-align: center;
       padding: 80px 20px 40px;
       background: linear-gradient(135deg, #0f172a, #1e293b);
       color: #fff;
+      animation: fadeInDown 1s ease;
     }
     header img {
       width: 140px;
@@ -26,7 +28,9 @@
       border: 3px solid #64ffda;
       object-fit: cover;
       margin-bottom: 15px;
+      transition: transform 0.3s ease;
     }
+    header img:hover { transform: scale(1.1); }
     header h1 {
       font-size: 2.2em;
       color: #64ffda;
@@ -38,7 +42,6 @@
       max-width: 600px;
       margin: 0 auto;
     }
-
     nav {
       background: #1e293b;
       text-align: center;
@@ -49,11 +52,10 @@
       text-decoration: none;
       margin: 0 20px;
       font-weight: 500;
-      transition: color 0.2s ease;
+      transition: color 0.3s ease;
     }
-    nav a:hover {
-      color: #64ffda;
-    }
+    nav a:hover { color: #64ffda; }
+
     section {
       max-width: 1000px;
       margin: 60px auto;
@@ -65,7 +67,116 @@
       border-left: 4px solid #64ffda;
       padding-left: 10px;
       font-size: 1.6em;
+      animation: fadeInLeft 1s ease;
     }
 
     .projects {
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .project-card h3 { color: #0f172a; margin-bottom: 10px; }
+    .project-card p { color: #475569; font-size: 0.95em; }
+
+    .btn-cv {
+      display: inline-block;
+      background: #64ffda;
+      color: #0f172a;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s ease, background 0.3s ease;
+      margin-bottom: 40px;
+    }
+    .btn-cv:hover {
+      background: #52e0b0;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 20px;
+      background: #1e293b;
+      color: #94a3b8;
+      margin-top: 60px;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://avatars.githubusercontent.com/u/641eb17?v=4" alt="Yahya Bougna">
+    <h1>Yahya Bougna</h1>
+    <p>Ingénieur passionné par le Cloud, la cybersécurité et le DevOps.</p>
+    <a href="SecOpsCv.pdf" class="btn-cv" download>Télécharger mon CV</a>
+  </header>
+
+  <nav>
+    <a href="#projects">Projets</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="projects">
+    <h2>Mes Réalisations</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Projet 01 - Chatbot</h3>
+        <p>Développement d'un chatbot intelligent avec frontend React et backend Node.js, déployé sur Kubernetes, avec CI/CD, monitoring et sécurité cloud.</p>
+      </div>
+      <div class="project-card">
+        <h3>Projet 02 - Conception d'un SIEM</h3>
+        <p>Solution de sécurité pour monitorer un cloud privé avec OpenSearch et Elastalert pour la détection d'anomalies en temps réel.</p>
+      </div>
+      <div class="project-card">
+        <h3>Projet 03 - Conception d'un Data-center</h3>
+        <p>Plateforme cloud pour l'école avec réseau, pare-feu OPNSense, monitoring Zabbix/Grafana et automatisation Ansible/Vagrant.</p>
+      </div>
+      <div class="project-card">
+        <h3>Projet 04 - InfraLogiciel (Dev&Ops)</h3>
+        <p>Site web complet conçu et sécurisé par un groupe d'étudiants, utilisant HTML, CSS, JS, Node.js, Vagrant et Git.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:grace.amia@protonmail.com">grace.amia@protonmail.com</a></p>
+    <p>Téléphone: +33 6 28 77 05 40</p>
+    <p>Suivez-moi: 
+      <a href="#">GitHub</a> | 
+      <a href="#">GitLab</a> | 
+      <a href="#">LinkedIn</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Yahya Bougna. Tous droits réservés.
+  </footer>
+</body>
+</html>
