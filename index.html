@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio – Yahya Bougna</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f8fafc;
+      background-color: #f9fafb;
       color: #0f172a;
       line-height: 1.6;
     }
     header {
       text-align: center;
-      padding: 60px 20px 20px;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
+      padding: 80px 20px 40px;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
       color: #fff;
     }
     header img {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       border: 3px solid #64ffda;
       object-fit: cover;
       margin-bottom: 15px;
     }
     header h1 {
-      font-size: 2em;
+      font-size: 2.2em;
       color: #64ffda;
+      margin-bottom: 8px;
     }
     header p {
       color: #e2e8f0;
       font-size: 1.1em;
+      max-width: 600px;
+      margin: 0 auto;
     }
+
     nav {
       background: #1e293b;
       text-align: center;
-      padding: 10px 0;
+      padding: 12px 0;
     }
     nav a {
       color: #94a3b8;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 20px;
       font-weight: 500;
       transition: color 0.2s ease;
     }
@@ -57,93 +61,11 @@
     }
     h2 {
       color: #0f172a;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       border-left: 4px solid #64ffda;
       padding-left: 10px;
       font-size: 1.6em;
     }
+
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .project {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-    }
-    .project h3 {
-      color: #0f172a;
-      margin-bottom: 10px;
-    }
-    .project p {
-      color: #475569;
-    }
-    footer {
-      text-align: center;
-      background: #0f172a;
-      color: #94a3b8;
-      padding: 30px 10px;
-      margin-top: 40px;
-    }
-    footer a {
-      color: #64ffda;
-      text-decoration: none;
-      font-weight: 500;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="https://avatars.githubusercontent.com/u/yourgithubid?v=4" alt="Photo de profil">
-    <h1>Yahya Bougna</h1>
-    <p>Ingénieur cybersécurité & cloud | Passionné par l’innovation et la sécurité des systèmes</p>
-  </header>
-
-  <nav>
-    <a href="#about">À propos</a>
-    <a href="#projects">Projets</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>À propos de moi</h2>
-    <p>Je suis ingénieur en cybersécurité, diplômé de l’ISEO, avec une expérience solide dans la gestion des risques, la conformité DORA, la sécurité des accès (Keycloak, Varonis, KeePass) et la protection des systèmes d’information. J’aime concevoir des solutions robustes et accessibles, tout en explorant les innovations du cloud et de la sécurité des infrastructures.</p>
-  </section>
-
-  <section id="projects">
-    <h2>Mes projets</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>🔐 Sécurisation du SI – Ensemble Protection Sociale</h3>
-        <p>Projet de réduction des risques cyber (conformité DORA, Varonis, KeePass, phishing, etc.).</p>
-      </div>
-      <div class="project">
-        <h3>☁️ Déploiement Cloud sécurisé</h3>
-        <p>Mise en place d’une infrastructure de test cloud avec authentification et sauvegarde automatisée via Veeam.</p>
-      </div>
-      <div class="project">
-        <h3>💻 Formation en administration système</h3>
-        <p>Configuration de VM ESXi, supervision réseau et intégration de solutions DevOps pour la sécurité.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:yahya.bougna@gmail.com">yahya.bougna@gmail.com</a></p>
-    <p>🔗 <a href="https://www.linkedin.com/in/yahya-bougna" target="_blank">LinkedIn</a></p>
-    <p>💼 <a href="https://github.com/yaya237" target="_blank">GitHub</a></p>
-  </section>
-
-  <footer>
-    © 2025 Yahya Bougna — Tous droits réservés.
-  </footer>
-</body>
-</html>
