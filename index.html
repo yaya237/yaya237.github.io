@@ -14,6 +14,7 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
+
     header {
       text-align: center;
       padding: 80px 20px 40px;
@@ -21,6 +22,7 @@
       color: #fff;
       animation: fadeInDown 1s ease;
     }
+
     header img {
       width: 140px;
       height: 140px;
@@ -31,17 +33,20 @@
       transition: transform 0.3s ease;
     }
     header img:hover { transform: scale(1.1); }
+
     header h1 {
       font-size: 2.2em;
       color: #64ffda;
       margin-bottom: 8px;
     }
+
     header p {
       color: #e2e8f0;
       font-size: 1.1em;
       max-width: 600px;
       margin: 0 auto 20px;
     }
+
     .btn-cv {
       display: inline-block;
       background: #64ffda;
@@ -56,6 +61,7 @@
       background: #52e0b0;
       transform: scale(1.05);
     }
+
     nav {
       background: #1e293b;
       text-align: center;
@@ -75,6 +81,7 @@
       margin: 60px auto;
       padding: 0 20px;
     }
+
     h2 {
       color: #0f172a;
       margin-bottom: 25px;
@@ -89,13 +96,14 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 25px;
     }
+
     .project-card {
       background: #fff;
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeInUp 1s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeZoomIn 0.8s ease forwards;
     }
     .project-card:hover {
       transform: translateY(-5px);
@@ -112,6 +120,13 @@
       margin-top: 60px;
     }
 
+    .contact-link {
+      color: #64ffda;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+    .contact-link:hover { color: #52e0b0; transform: scale(1.05); }
+
     /* Animations */
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-50px); }
@@ -121,15 +136,15 @@
       from { opacity: 0; transform: translateX(-50px); }
       to { opacity: 1; transform: translateX(0); }
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fadeZoomIn {
+      0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="IMG_1671.heic" alt="Yahya Bougna">
+    <img src="IMG_1671.jpg" alt="Yahya Bougna" loading="lazy">
     <h1>Yahya Bougna</h1>
     <p>Ingénieur passionné par le Cloud, la cybersécurité et le DevOps.</p>
     <a href="SecOpsCv.pdf" class="btn-cv" download>Télécharger mon CV</a>
@@ -143,39 +158,59 @@
   <section id="projects">
     <h2>Mes Réalisations</h2>
     <div class="projects">
-      <div class="project-card">
-        <h3>Projet 01 - Chatbot</h3>
+      <div class="project-card" style="animation-delay:0s">
+        <h3>Projet 01 - Chatbot Intelligent</h3>
         <p>
-Dans le cadre d'un projet personnel, j'ai développé un chatbot intelligent avec frontend React et backend Node.js.
-Mon objectif était de concevoir et déployer une application complète, en prenant en charge tout le cycle de vie : conception, développement, tests et production.
-J'ai conçu une architecture scalable et robuste, déployée sur Kubernetes, et mis en place des pipelines CI/CD avec GitLab CI.
-Côté infrastructure, j'ai utilisé Terraform et Ansible pour automatiser les déploiements et configurations, et Prometheus/Grafana pour le monitoring.
-Les versions ont été déployées sur AWS puis Azure, avec une attention particulière à la sécurité et aux performances.
+Développement d’un assistant virtuel évolutif avec frontend React et backend Node.js/Express.
+Intégration d’un moteur NLP pour comprendre les intentions, système de logging et analytics pour suivre les interactions.
+Déploiement sur Docker/Kubernetes avec CI/CD via GitHub Actions. 
+Version cloud sécurisée sur AWS et Azure.
         </p>
       </div>
-      <div class="project-card">
-        <h3>Projet 02 - Conception d'un SIEM</h3>
+
+      <div class="project-card" style="animation-delay:0.1s">
+        <h3>Projet 02 - SIEM OpenSearch</h3>
         <p>
-J'ai conçu une solution de sécurité pour monitorer un cloud privé avec la stack OpenSearch.
-L'objectif était de centraliser et analyser les logs pour garantir une surveillance continue.
-J'ai configuré OpenSearch pour une collecte optimale des événements et mis en place des règles d'alerte avec Elastalert pour détecter automatiquement anomalies et comportements suspects.
-Ce projet m'a permis de renforcer mes compétences en sécurité et monitoring avancé.
+Mise en place d’une solution de sécurité pour monitorer un cloud privé avec OpenSearch.
+Collecte et centralisation des logs, mise en place de règles d’alerte avec Elastalert pour anomalies et comportements suspects.
+Surveillance en temps réel et automatisation de la gestion des logs.
         </p>
       </div>
-      <div class="project-card">
+
+      <div class="project-card" style="animation-delay:0.2s">
         <h3>Projet 03 - Conception d'un Data-center</h3>
         <p>
-Durant ma quatrième année, avec cinq autres étudiants, nous avons créé une plateforme similaire aux services cloud (Azure/AWS) pour l'école.
-Nous avons configuré un réseau complet (table d'adressage, routeurs, switches, DHCP/DDNS), mis en place un pare-feu OPNSense et géré l'infrastructure via Zabbix et Grafana.
-Des stratégies de sauvegarde ont été définies et certains services automatisés avec Ansible et Vagrant.
+Création d’une plateforme cloud interne (type Azure/AWS) pour l’école.
+Configuration réseau complète, pare-feu OPNSense, monitoring avec Zabbix et Grafana.
+Automatisation via Ansible et Vagrant, stratégies de sauvegarde et sécurité renforcée.
         </p>
       </div>
-      <div class="project-card">
+
+      <div class="project-card" style="animation-delay:0.3s">
         <h3>Projet 04 - InfraLogiciel (Dev&Ops)</h3>
         <p>
-Ce projet éducatif m'a permis, avec cinq étudiants, de concevoir, sécuriser et mettre en ligne un site web complet.
-Les outils utilisés incluent HTML, CSS, JS, Node.js, Vagrant, Shell et Git.
-Le projet a renforcé mes compétences DevOps, sécurité et collaboration sur un workflow complet.
+Conception, mise en ligne et sécurisation d’un site web complet avec 5 étudiants.
+Technologies: HTML, CSS, JS, Node.js, Vagrant, Shell, Git.
+Renforcement des compétences DevOps, sécurité et workflow collaboratif.
+        </p>
+      </div>
+
+      <div class="project-card" style="animation-delay:0.4s">
+        <h3>PFE - Cloud Privé OpenNebula</h3>
+        <p>
+Mise en place d’une infrastructure cloud privée avec OpenNebula.
+Déploiement et gestion de machines virtuelles, configuration réseaux virtuels et orchestration des ressources.
+Automatisation via scripts Shell et Vagrant, monitoring avancé avec Zabbix.
+Acquisition d’une solide expérience sur les environnements cloud privés.
+        </p>
+      </div>
+
+      <div class="project-card" style="animation-delay:0.5s">
+        <h3>POC - Keycloak</h3>
+        <p>
+Réalisation d’un Proof of Concept pour centraliser l’authentification et la gestion des utilisateurs.
+Configuration de realms, clients, rôles et flux sécurisés.
+Intégration testée sur différentes applications pour améliorer sécurité et conformité.
         </p>
       </div>
     </div>
@@ -183,11 +218,11 @@ Le projet a renforcé mes compétences DevOps, sécurité et collaboration sur u
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:Yahya.bougna@gmail.com">Yahya.bougna@gmail.com</a></p>
-    <p>Téléphone: +33 6 28 77 05 40</p>
+    <p>Email: <a href="mailto:Yahya.bougna@gmail.com" class="contact-link">Yahya.bougna@gmail.com</a></p>
+    <p>Téléphone: <a href="tel:+33628770540" class="contact-link">+33 6 26 24 14 17</a></p>
     <p>Suivez-moi: 
-      <a href="https://github.com/yaya237" target="_blank">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/yahya-bougna-79609a255/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/yaya237" target="_blank" class="contact-link">GitHub</a> | 
+      <a href="https://www.linkedin.com/in/yahya-bougna-79609a255/" target="_blank" class="contact-link">LinkedIn</a>
     </p>
   </section>
 
