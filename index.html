@@ -40,7 +40,21 @@
       color: #e2e8f0;
       font-size: 1.1em;
       max-width: 600px;
-      margin: 0 auto;
+      margin: 0 auto 20px;
+    }
+    .btn-cv {
+      display: inline-block;
+      background: #64ffda;
+      color: #0f172a;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .btn-cv:hover {
+      background: #52e0b0;
+      transform: scale(1.05);
     }
     nav {
       background: #1e293b;
@@ -72,7 +86,7 @@
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 25px;
     }
     .project-card {
@@ -87,24 +101,8 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
-    .project-card h3 { color: #0f172a; margin-bottom: 10px; }
-    .project-card p { color: #475569; font-size: 0.95em; }
-
-    .btn-cv {
-      display: inline-block;
-      background: #64ffda;
-      color: #0f172a;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.3s ease, background 0.3s ease;
-      margin-bottom: 40px;
-    }
-    .btn-cv:hover {
-      background: #52e0b0;
-      transform: scale(1.05);
-    }
+    .project-card h3 { color: #0f172a; margin-bottom: 12px; }
+    .project-card p { color: #475569; font-size: 0.95em; white-space: pre-line; }
 
     footer {
       text-align: center;
@@ -131,7 +129,7 @@
 </head>
 <body>
   <header>
-    <img src="https://avatars.githubusercontent.com/u/641eb17?v=4" alt="Yahya Bougna">
+    <img src="IMG_1671.heic" alt="Yahya Bougna">
     <h1>Yahya Bougna</h1>
     <p>Ingénieur passionné par le Cloud, la cybersécurité et le DevOps.</p>
     <a href="SecOpsCv.pdf" class="btn-cv" download>Télécharger mon CV</a>
@@ -147,31 +145,49 @@
     <div class="projects">
       <div class="project-card">
         <h3>Projet 01 - Chatbot</h3>
-        <p>Développement d'un chatbot intelligent avec frontend React et backend Node.js, déployé sur Kubernetes, avec CI/CD, monitoring et sécurité cloud.</p>
+        <p>
+Dans le cadre d'un projet personnel, j'ai développé un chatbot intelligent avec frontend React et backend Node.js.
+Mon objectif était de concevoir et déployer une application complète, en prenant en charge tout le cycle de vie : conception, développement, tests et production.
+J'ai conçu une architecture scalable et robuste, déployée sur Kubernetes, et mis en place des pipelines CI/CD avec GitLab CI.
+Côté infrastructure, j'ai utilisé Terraform et Ansible pour automatiser les déploiements et configurations, et Prometheus/Grafana pour le monitoring.
+Les versions ont été déployées sur AWS puis Azure, avec une attention particulière à la sécurité et aux performances.
+        </p>
       </div>
       <div class="project-card">
         <h3>Projet 02 - Conception d'un SIEM</h3>
-        <p>Solution de sécurité pour monitorer un cloud privé avec OpenSearch et Elastalert pour la détection d'anomalies en temps réel.</p>
+        <p>
+J'ai conçu une solution de sécurité pour monitorer un cloud privé avec la stack OpenSearch.
+L'objectif était de centraliser et analyser les logs pour garantir une surveillance continue.
+J'ai configuré OpenSearch pour une collecte optimale des événements et mis en place des règles d'alerte avec Elastalert pour détecter automatiquement anomalies et comportements suspects.
+Ce projet m'a permis de renforcer mes compétences en sécurité et monitoring avancé.
+        </p>
       </div>
       <div class="project-card">
         <h3>Projet 03 - Conception d'un Data-center</h3>
-        <p>Plateforme cloud pour l'école avec réseau, pare-feu OPNSense, monitoring Zabbix/Grafana et automatisation Ansible/Vagrant.</p>
+        <p>
+Durant ma quatrième année, avec cinq autres étudiants, nous avons créé une plateforme similaire aux services cloud (Azure/AWS) pour l'école.
+Nous avons configuré un réseau complet (table d'adressage, routeurs, switches, DHCP/DDNS), mis en place un pare-feu OPNSense et géré l'infrastructure via Zabbix et Grafana.
+Des stratégies de sauvegarde ont été définies et certains services automatisés avec Ansible et Vagrant.
+        </p>
       </div>
       <div class="project-card">
         <h3>Projet 04 - InfraLogiciel (Dev&Ops)</h3>
-        <p>Site web complet conçu et sécurisé par un groupe d'étudiants, utilisant HTML, CSS, JS, Node.js, Vagrant et Git.</p>
+        <p>
+Ce projet éducatif m'a permis, avec cinq étudiants, de concevoir, sécuriser et mettre en ligne un site web complet.
+Les outils utilisés incluent HTML, CSS, JS, Node.js, Vagrant, Shell et Git.
+Le projet a renforcé mes compétences DevOps, sécurité et collaboration sur un workflow complet.
+        </p>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:grace.amia@protonmail.com">grace.amia@protonmail.com</a></p>
+    <p>Email: <a href="mailto:Yahya.bougna@gmail.com">Yahya.bougna@gmail.com</a></p>
     <p>Téléphone: +33 6 28 77 05 40</p>
     <p>Suivez-moi: 
-      <a href="#">GitHub</a> | 
-      <a href="#">GitLab</a> | 
-      <a href="#">LinkedIn</a>
+      <a href="https://github.com/yaya237" target="_blank">GitHub</a> | 
+      <a href="https://www.linkedin.com/in/yahya-bougna-79609a255/" target="_blank">LinkedIn</a>
     </p>
   </section>
 
