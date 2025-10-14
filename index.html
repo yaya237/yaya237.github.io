@@ -14,6 +14,7 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
+
     header {
       text-align: center;
       padding: 80px 20px 40px;
@@ -31,17 +32,8 @@
       transition: transform 0.3s ease;
     }
     header img:hover { transform: scale(1.1); }
-    header h1 {
-      font-size: 2.2em;
-      color: #64ffda;
-      margin-bottom: 8px;
-    }
-    header p {
-      color: #e2e8f0;
-      font-size: 1.1em;
-      max-width: 600px;
-      margin: 0 auto 20px;
-    }
+    header h1 { font-size: 2.2em; color: #64ffda; margin-bottom: 8px; }
+    header p { color: #e2e8f0; font-size: 1.1em; max-width: 600px; margin: 0 auto 20px; }
     .btn-cv {
       display: inline-block;
       background: #64ffda;
@@ -56,10 +48,14 @@
       background: #52e0b0;
       transform: scale(1.05);
     }
+
     nav {
       background: #1e293b;
       text-align: center;
       padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     nav a {
       color: #94a3b8;
@@ -103,6 +99,16 @@
     }
     .project-card h3 { color: #0f172a; margin-bottom: 12px; }
     .project-card p { color: #475569; font-size: 0.95em; white-space: pre-line; }
+    .tech-badges span {
+      display: inline-block;
+      background: #e0f7f4;
+      color: #0f172a;
+      padding: 3px 8px;
+      margin: 2px;
+      border-radius: 5px;
+      font-size: 0.8em;
+      font-weight: 500;
+    }
 
     footer {
       text-align: center;
@@ -112,24 +118,32 @@
       margin-top: 60px;
     }
 
+    #back-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #64ffda;
+      color: #0f172a;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: bold;
+      display: none;
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+    #back-to-top:hover { transform: scale(1.2); }
+
     /* Animations */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInLeft {
-      from { opacity: 0; transform: translateX(-50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="IMG_1671.heic" alt="Yahya Bougna" loading="lazy">
+    <img src="IMG_1671.jpg" alt="Yahya Bougna">
     <h1>Yahya Bougna</h1>
     <p>Ingénieur passionné par le Cloud, la cybersécurité et le DevOps.</p>
     <a href="SecOpsCv.pdf" class="btn-cv" download>Télécharger mon CV</a>
@@ -143,55 +157,80 @@
   <section id="projects">
     <h2>Mes Réalisations</h2>
     <div class="projects">
+      
       <div class="project-card">
         <h3>Projet 01 - Chatbot Intelligent</h3>
         <p>
-Développement d’un assistant virtuel évolutif capable de répondre à des questions techniques et d'interagir avec des services externes.
-Frontend en React avec Material UI, backend Node.js/Express, moteur NLP personnalisé pour analyser les intentions, logging complet des interactions.
-Déploiement sur Docker/Kubernetes, pipelines CI/CD avec GitHub Actions. Application conçue pour combiner automatisation, intelligence artificielle et infrastructure cloud sécurisée.
+Développement d'un assistant virtuel intelligent avec React (frontend) et Node.js (backend).
+Architecture scalable déployée sur Kubernetes avec CI/CD GitHub Actions.
+Infrastructure automatisée via Terraform & Ansible, monitoring avec Prometheus et Grafana.
+Version cloud sur AWS puis Azure, intégrant sécurité et performance.
         </p>
+        <div class="tech-badges">
+          <span>React</span> <span>Node.js</span> <span>Kubernetes</span> <span>Terraform</span> <span>Ansible</span> <span>GitHub Actions</span>
+        </div>
       </div>
 
       <div class="project-card">
-        <h3>Projet 02 - PFE OpenNebula</h3>
+        <h3>Projet PFE - OpenNebula</h3>
         <p>
-Mise en place d'une infrastructure cloud privée avec OpenNebula. Déploiement et gestion de machines virtuelles, configuration de réseaux virtuels et optimisation des ressources.
-Automatisation avec scripts Shell et Vagrant, monitoring avancé avec Zabbix. Ce projet m'a apporté une expertise solide sur la gestion d'environnements cloud privés et l’orchestration des ressources.
+Mise en place d'une infrastructure cloud privée avec OpenNebula.
+Déploiement et gestion de VM, configuration réseau et optimisation des ressources.
+Automatisation avec scripts Shell & Vagrant, monitoring avancé avec Zabbix.
+Acquisition d'une expérience solide sur cloud privé et orchestration des ressources.
         </p>
+        <div class="tech-badges">
+          <span>OpenNebula</span> <span>Shell</span> <span>Vagrant</span> <span>Zabbix</span>
+        </div>
       </div>
 
       <div class="project-card">
-        <h3>Projet 03 - POC Keycloak</h3>
+        <h3>POC - Keycloak</h3>
         <p>
-Réalisation d’un Proof of Concept sur Keycloak pour centraliser l’authentification et la gestion des utilisateurs.
-Configuration de realms, clients, rôles et flux d’authentification sécurisés. Intégration testée avec plusieurs applications internes pour améliorer la sécurité et la conformité aux standards IT.
+Réalisation d'un Proof of Concept sur Keycloak pour centraliser l'authentification et la gestion des utilisateurs.
+Configuration de realms, clients et rôles, avec flux sécurisés.
+Test d'intégration avec plusieurs applications internes pour renforcer sécurité et conformité.
         </p>
+        <div class="tech-badges">
+          <span>Keycloak</span> <span>IAM</span> <span>OAuth2</span>
+        </div>
       </div>
 
       <div class="project-card">
-        <h3>Projet 04 - Conception d’un SIEM</h3>
+        <h3>Projet 02 - SIEM avec OpenSearch</h3>
         <p>
-Mise en place d’une solution de sécurité pour monitorer un cloud privé avec la stack OpenSearch.
-Centralisation et analyse des logs pour une surveillance continue, configuration optimale des événements et création de règles d’alerte avec Elastalert.
-Renforcement des compétences en sécurité et monitoring avancé.
+Conception d'une solution SIEM pour un cloud privé avec OpenSearch.
+Collecte, centralisation et analyse des logs, règles d'alerte avec Elastalert.
+Surveillance proactive et sécurité renforcée.
         </p>
+        <div class="tech-badges">
+          <span>OpenSearch</span> <span>Elastalert</span> <span>Monitoring</span>
+        </div>
       </div>
 
       <div class="project-card">
-        <h3>Projet 05 - Conception d’un Data-center</h3>
+        <h3>Projet 03 - Data-center éducatif</h3>
         <p>
-Création d'une plateforme cloud type Azure/AWS pour l'école avec cinq étudiants. Réseau complet (tables d’adressage, routeurs, switches, DHCP/DDNS), pare-feu OPNSense, gestion via Zabbix/Grafana.
-Automatisation de certains services avec Ansible/Vagrant et mise en place d’une stratégie de sauvegarde.
+Création d'une plateforme type Azure/AWS pour l'école avec réseau complet (DHCP, DDNS, switches, routeurs) et pare-feu OPNSense.
+Gestion via Zabbix & Grafana, automatisation avec Ansible & Vagrant.
         </p>
+        <div class="tech-badges">
+          <span>Networking</span> <span>OPNSense</span> <span>Zabbix</span> <span>Grafana</span>
+        </div>
       </div>
 
       <div class="project-card">
-        <h3>Projet 06 - InfraLogiciel (Dev&Ops)</h3>
+        <h3>Projet 04 - InfraLogiciel (Dev&Ops)</h3>
         <p>
-Conception, sécurisation et mise en ligne d’un site web complet avec cinq étudiants.
-Technologies utilisées : HTML, CSS, JavaScript, Node.js, Vagrant, Shell, Git. Projet renforçant compétences DevOps, sécurité et collaboration sur un workflow complet.
+Conception, sécurisation et mise en ligne d'un site web complet en équipe.
+Technologies : HTML, CSS, JavaScript, Node.js, Vagrant, Shell et Git.
+Renforcement des compétences DevOps et collaboration sur workflow complet.
         </p>
+        <div class="tech-badges">
+          <span>HTML</span> <span>CSS</span> <span>JavaScript</span> <span>Node.js</span> <span>Git</span>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -208,5 +247,17 @@ Technologies utilisées : HTML, CSS, JavaScript, Node.js, Vagrant, Shell, Git. P
   <footer>
     © 2025 Yahya Bougna. Tous droits réservés.
   </footer>
+
+  <div id="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</div>
+
+  <script>
+    // Show back-to-top button on scroll
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 300) btn.style.display = 'block';
+      else btn.style.display = 'none';
+    });
+  </script>
+
 </body>
 </html>
