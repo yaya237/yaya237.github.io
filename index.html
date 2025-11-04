@@ -97,6 +97,11 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
     .project-card h3 { color: #0f172a; margin-bottom: 12px; }
     .project-card p { color: #475569; font-size: 0.95em; white-space: pre-line; }
     .tech-badges span {
@@ -134,7 +139,6 @@
     }
     #back-to-top:hover { transform: scale(1.2); }
 
-    /* Animations */
     @keyframes fadeInDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
@@ -145,95 +149,144 @@
   <header>
     <img src="IMG_1671.jpg" alt="Yahya Bougna">
     <h1>Yahya Bougna</h1>
-    <p>Ingénieur passionné par le Cloud, la cybersécurité et le DevOps.</p>
+    <p>Ingénieur passionné par le Cloud, la cybersécurité et le DevSecOps.</p>
     <a href="SecOpsCv.pdf" class="btn-cv" download>Télécharger mon CV</a>
   </header>
 
   <nav>
     <a href="#projects">Projets</a>
+    <a href="#skills">Compétences</a>
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- ================== PROJETS ================== -->
   <section id="projects">
     <h2>Mes Réalisations</h2>
     <div class="projects">
-      
+
       <div class="project-card">
-        <h3>Projet 01 - Chatbot Intelligent</h3>
+        <a href="https://github.com/yaya237/chatbot-fullstack" target="_blank">
+          <img src="images/chatbot.png" alt="Chatbot Intelligent">
+        </a>
+        <h3>Chatbot Intelligent Fullstack (MLOps & Cloud)</h3>
         <p>
-Développement d'un assistant virtuel intelligent avec React (frontend) et Node.js (backend).
-Architecture scalable déployée sur Kubernetes avec CI/CD GitHub Actions.
-Infrastructure automatisée via Terraform & Ansible, monitoring avec Prometheus et Grafana.
-Version cloud sur AWS puis Azure, intégrant sécurité et performance.
+Développement complet d’un assistant virtuel intelligent combinant une interface React (frontend) et un backend Node.js, déployé dans un environnement Kubernetes (EKS).
+Architecture microservices & MLOps : entraînement, déploiement et supervision des modèles d’IA avec MLflow et Airflow.
+Pipeline CI/CD automatisé (GitHub Actions) intégrant build, tests, scans (Trivy, SonarQube, OWASP Dependency Check) et déploiement cloud (AWS, Azure).
+Monitoring complet via Prometheus, Grafana, Loki et intégration du logging centralisé.
         </p>
         <div class="tech-badges">
-          <span>React</span> <span>Node.js</span> <span>Kubernetes</span> <span>Terraform</span> <span>Ansible</span> <span>GitHub Actions</span>
+          <span>React</span><span>Node.js</span><span>Terraform</span><span>Ansible</span><span>Kubernetes (EKS)</span>
+          <span>GitHub Actions</span><span>Docker</span><span>Prometheus</span><span>Grafana</span><span>Loki</span>
+          <span>Trivy</span><span>SonarQube</span><span>MLflow</span><span>Airflow</span><span>AWS</span><span>Azure</span>
         </div>
       </div>
 
       <div class="project-card">
-        <h3>Projet PFE - OpenNebula</h3>
+        <a href="https://github.com/yaya237/DevSecOps-Netflix" target="_blank">
+          <img src="images/netflix.png" alt="DevSecOps Netflix">
+        </a>
+        <h3>DevSecOps Netflix</h3>
         <p>
-Mise en place d'une infrastructure cloud privée avec OpenNebula.
-Déploiement et gestion de VM, configuration réseau et optimisation des ressources.
-Automatisation avec scripts Shell & Vagrant, monitoring avancé avec Zabbix.
-Acquisition d'une expérience solide sur cloud privé et orchestration des ressources.
+Création d’un pipeline DevSecOps complet pour un site de streaming inspiré de Netflix hébergé sur AWS.
+Infrastructure automatisée via Terraform (VPC, EKS, IAM, S3, EC2), conteneurisation Docker et orchestration Kubernetes.
+CI/CD Jenkins : build, tests, scans (SonarQube, Trivy, OWASP ZAP) et déploiement automatisé.
+Supervision avec Prometheus, Grafana et OpenSearch (Fluentd) ; gestion des secrets HashiCorp Vault.
         </p>
         <div class="tech-badges">
-          <span>OpenNebula</span> <span>Shell</span> <span>Vagrant</span> <span>Zabbix</span>
+          <span>AWS</span><span>Terraform</span><span>Kubernetes</span><span>Docker</span><span>Jenkins</span>
+          <span>SonarQube</span><span>Trivy</span><span>OWASP ZAP</span><span>Prometheus</span>
+          <span>Grafana</span><span>Vault</span><span>OpenSearch</span><span>Fluentd</span><span>Git</span>
         </div>
       </div>
 
       <div class="project-card">
-        <h3>POC - Keycloak</h3>
+        <a href="https://github.com/yaya237/PFE-opennebula" target="_blank">
+          <img src="images/opennebula.png" alt="Cloud Privé OpenNebula">
+        </a>
+        <h3>Cloud Privé OpenNebula (Teaching Cloud)</h3>
         <p>
-Réalisation d'un Proof of Concept sur Keycloak pour centraliser l'authentification et la gestion des utilisateurs.
-Configuration de realms, clients et rôles, avec flux sécurisés.
-Test d'intégration avec plusieurs applications internes pour renforcer sécurité et conformité.
+Déploiement d’une infrastructure cloud privée pour laboratoires pédagogiques avec OpenNebula.
+Automatisation complète via Terraform, Vagrant et Ansible.
+Supervision via Zabbix & Grafana, sécurité réseau assurée par OPNSense.
+Projet visant à offrir un environnement de formation “cloud-like” (AWS/Azure) 100 % automatisé.
         </p>
         <div class="tech-badges">
-          <span>Keycloak</span> <span>IAM</span> <span>OAuth2</span>
+          <span>OpenNebula</span><span>Terraform</span><span>Ansible</span><span>Vagrant</span><span>Zabbix</span>
+          <span>Grafana</span><span>OPNSense</span><span>Cloud Privé</span>
         </div>
       </div>
 
       <div class="project-card">
-        <h3>Projet 02 - SIEM avec OpenSearch</h3>
+        <a href="https://github.com/yaya237/Keycloak-IAM" target="_blank">
+          <img src="images/keycloak.png" alt="Keycloak IAM">
+        </a>
+        <h3>POC Keycloak & Gouvernance IAM</h3>
         <p>
-Conception d'une solution SIEM pour un cloud privé avec OpenSearch.
-Collecte, centralisation et analyse des logs, règles d'alerte avec Elastalert.
-Surveillance proactive et sécurité renforcée.
+Mise en place d’un Proof of Concept IAM avec Keycloak pour centraliser la gestion des identités et des accès.
+Configuration de realms, clients, rôles et policies. Intégration OAuth2, OIDC, SAML.
+Déploiement via Docker Compose et test d’interconnexion multi-applications internes.
+Aligné sur les normes DORA, RGPD et pratiques IAM d’entreprise.
         </p>
         <div class="tech-badges">
-          <span>OpenSearch</span> <span>Elastalert</span> <span>Monitoring</span>
+          <span>Keycloak</span><span>IAM</span><span>OAuth2</span><span>OpenID Connect</span><span>Docker Compose</span>
+          <span>SAML</span><span>RGPD</span><span>DORA</span>
         </div>
       </div>
 
       <div class="project-card">
-        <h3>Projet 03 - Data-center éducatif</h3>
+        <img src="images/opensearch.png" alt="SIEM OpenSearch">
+        <h3>SIEM & Détection d’incidents (OpenSearch)</h3>
         <p>
-Création d'une plateforme type Azure/AWS pour l'école avec réseau complet (DHCP, DDNS, switches, routeurs) et pare-feu OPNSense.
-Gestion via Zabbix & Grafana, automatisation avec Ansible & Vagrant.
+Création d’un SIEM open-source basé sur OpenSearch et Elastalert.
+Collecte, corrélation et visualisation des logs applicatifs et systèmes.
+Intégration avec Prometheus & Grafana pour la corrélation métriques/logs.
+Alertes automatisées et supervision proactive.
         </p>
         <div class="tech-badges">
-          <span>Networking</span> <span>OPNSense</span> <span>Zabbix</span> <span>Grafana</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>Projet 04 - InfraLogiciel (Dev&Ops)</h3>
-        <p>
-Conception, sécurisation et mise en ligne d'un site web complet en équipe.
-Technologies : HTML, CSS, JavaScript, Node.js, Vagrant, Shell et Git.
-Renforcement des compétences DevOps et collaboration sur workflow complet.
-        </p>
-        <div class="tech-badges">
-          <span>HTML</span> <span>CSS</span> <span>JavaScript</span> <span>Node.js</span> <span>Git</span>
+          <span>OpenSearch</span><span>Elastalert</span><span>Prometheus</span><span>Grafana</span><span>Monitoring</span>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- ================== COMPETENCES ================== -->
+  <section id="skills">
+    <h2>Compétences techniques</h2>
+    <p style="margin-bottom:20px;">
+      Synthèse des technologies et outils que j’utilise en Cloud, DevOps et Cybersécurité :
+    </p>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:25px;">
+      <div class="project-card">
+        <h3>🌩️ Cloud & Infrastructure</h3>
+        <p>AWS (EKS, S3, IAM), Azure (AKS, RBAC), OpenNebula, Terraform, Ansible, Vagrant, OPNSense, VMware, VirtualBox.</p>
+      </div>
+      <div class="project-card">
+        <h3>⚙️ DevOps & CI/CD</h3>
+        <p>Jenkins, GitHub Actions, Docker, Kubernetes, Helm, GitOps, monitoring avec Prometheus & Grafana.</p>
+      </div>
+      <div class="project-card">
+        <h3>🧠 Sécurité & DevSecOps</h3>
+        <p>Trivy, SonarQube, OWASP ZAP, Vault, OpenSearch, Elastalert, RGPD, DORA, ISO 27001.</p>
+      </div>
+      <div class="project-card">
+        <h3>🔐 IAM & Gouvernance</h3>
+        <p>Keycloak, Syncope, OAuth2, SAML, OpenID Connect, gestion des rôles et des accès multi-cloud.</p>
+      </div>
+      <div class="project-card">
+        <h3>💻 Développement & Scripting</h3>
+        <p>Python, JavaScript, Bash, React, Node.js, API REST, Git/GitLab, automatisation système.</p>
+      </div>
+      <div class="project-card">
+        <h3>🤖 Data & MLOps</h3>
+        <p>MLflow, Airflow, CI/CD pour modèles ML, monitoring de performance et retraining automatisé.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== CONTACT ================== -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:Yahya.bougna@gmail.com">Yahya.bougna@gmail.com</a></p>
@@ -251,7 +304,6 @@ Renforcement des compétences DevOps et collaboration sur workflow complet.
   <div id="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</div>
 
   <script>
-    // Show back-to-top button on scroll
     const btn = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
       if(window.scrollY > 300) btn.style.display = 'block';
