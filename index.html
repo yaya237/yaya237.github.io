@@ -12,207 +12,183 @@
       --card:#ffffff; --nav:#1e293b; --muted-2:#94a3b8;
     }
     body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;scroll-behavior:smooth;}
-
-    /* Header */
-    header{
-      text-align:center;padding:80px 20px 40px;background:linear-gradient(135deg,#0f172a,#1e293b);
-      color:#fff;animation:fadeInDown 0.8s ease;
-    }
-    header img{
-      width:140px;height:140px;border-radius:50%;border:3px solid var(--brand);object-fit:cover;
-      margin-bottom:15px;transition:transform .25s ease;
-    }
-    header img:hover{transform:scale(1.06)}
-    header h1{font-size:2.2em;color:var(--brand);margin-bottom:8px}
-    header p{color:#e2e8f0;font-size:1.05em;max-width:680px;margin:0 auto 18px}
-    .btn{
-      display:inline-block;background:var(--brand);color:#0f172a;padding:11px 22px;border-radius:10px;
-      font-weight:600;text-decoration:none;transition:transform .2s ease,background .2s ease;
-    }
-    .btn:hover{background:var(--brand-2);transform:translateY(-1px)}
-
-    /* Nav */
-    nav{background:var(--nav);text-align:center;padding:12px 0;position:sticky;top:0;z-index:10}
-    nav a{color:var(--muted-2);text-decoration:none;margin:0 20px;font-weight:500;transition:color .2s}
-    nav a:hover{color:var(--brand)}
-
-    /* Sections & cards */
-    section{max-width:1000px;margin:60px auto;padding:0 20px}
-    h2{margin-bottom:25px;border-left:4px solid var(--brand);padding-left:10px;font-size:1.6em;animation:fadeInLeft .6s}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
-    .card{
-      background:var(--card);border-radius:14px;padding:22px;box-shadow:0 4px 12px rgba(0,0,0,.08);
-      transition:transform .2s, box-shadow .2s;animation:fadeInUp .6s;
-    }
-    .card:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(0,0,0,.12)}
-    .card h3{margin-bottom:12px}
-    .card p{color:var(--muted);font-size:.96em;white-space:pre-line}
-
-    /* Tech badges & lists */
-    .badges{margin-top:10px}
-    .badges span{
-      display:inline-block;background:#e0f7f4;color:#083344;padding:4px 10px;margin:3px;border-radius:999px;
-      font-size:.78em;font-weight:600
-    }
-    .subhead{margin-top:14px;margin-bottom:6px;font-weight:700;color:#0f172a}
-    ul.clean{margin-left:18px;color:var(--muted);font-size:.95em}
-    ul.clean li{margin:4px 0}
-
-    /* Buttons */
-    .btn-row{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
-    .btn-gh{background:var(--brand);color:#0f172a;text-decoration:none;padding:9px 16px;border-radius:10px;font-weight:600}
-    .btn-gh:hover{background:var(--brand-2)}
-
-    /* Skills (optionnel : conservé) */
-    .pill{display:inline-block;background:#eef2ff;color:#1e293b;padding:6px 10px;border-radius:10px;margin:6px;font-size:.85em;font-weight:600}
-
-    /* Contact */
-    .contact-card{
-      background:linear-gradient(135deg,#0f172a,#1e293b);color:#e2e8f0;border-radius:16px;padding:26px;
-      display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:center;
-    }
-    @media (max-width:720px){.contact-card{grid-template-columns:1fr}}
-    .contact-left h3{color:var(--brand);margin-bottom:6px}
-    .contact-left p{color:#cbd5e1;margin-bottom:14px}
-    .contact-actions a,.contact-actions button{
-      display:inline-flex;align-items:center;gap:8px;background:#0ea5e9;color:#001018;padding:10px 14px;border-radius:10px;
-      font-weight:700;border:none;cursor:pointer;text-decoration:none;margin-right:10px;margin-top:6px
-    }
-    .contact-actions a:hover,.contact-actions button:hover{filter:brightness(1.05)}
-    .contact-actions .ghost{background:transparent;color:#e2e8f0;border:1.5px solid #334155}
-    .tiny{font-size:.9em;color:#94a3b8}
-
-    footer{text-align:center;padding:25px 20px;background:var(--nav);color:var(--muted-2);margin-top:60px}
-
-    #back-to-top{
-      position:fixed;bottom:25px;right:25px;background:var(--brand);color:#0f172a;padding:10px 15px;border-radius:50%;
-      cursor:pointer;font-weight:bold;display:none;transition:transform .2s;z-index:100;
-    }
-    #back-to-top:hover{transform:scale(1.12)}
-
-    @keyframes fadeInDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes fadeInLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    header{text-align:center;padding:80px 20px 40px;background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;}
+    header img{width:140px;height:140px;border-radius:50%;border:3px solid var(--brand);object-fit:cover;margin-bottom:15px;}
+    header h1{font-size:2.2em;color:var(--brand);margin-bottom:8px;}
+    header p{color:#e2e8f0;font-size:1.05em;max-width:680px;margin:0 auto 18px;}
+    .btn{display:inline-block;background:var(--brand);color:#0f172a;padding:11px 22px;border-radius:10px;font-weight:600;text-decoration:none;transition:0.2s;}
+    .btn:hover{background:var(--brand-2);transform:translateY(-1px);}
+    nav{background:var(--nav);text-align:center;padding:12px 0;position:sticky;top:0;z-index:10;}
+    nav a{color:var(--muted-2);text-decoration:none;margin:0 20px;font-weight:500;transition:color .2s;}
+    nav a:hover{color:var(--brand);}
+    section{max-width:1000px;margin:60px auto;padding:0 20px;}
+    h2{margin-bottom:25px;border-left:4px solid var(--brand);padding-left:10px;font-size:1.6em;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;}
+    .card{background:var(--card);border-radius:14px;padding:22px;box-shadow:0 4px 12px rgba(0,0,0,.08);transition:0.2s;}
+    .card:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(0,0,0,.12);}
+    .card h3{margin-bottom:12px;}
+    .card p{color:var(--muted);font-size:.96em;white-space:pre-line;}
+    .badges span{display:inline-block;background:#e0f7f4;color:#083344;padding:4px 10px;margin:3px;border-radius:999px;font-size:.78em;font-weight:600;}
+    .subhead{margin-top:14px;margin-bottom:6px;font-weight:700;color:#0f172a;}
+    ul.clean{margin-left:18px;color:var(--muted);font-size:.95em;}
+    ul.clean li{margin:4px 0;}
+    .btn-gh{background:var(--brand);color:#0f172a;text-decoration:none;padding:9px 16px;border-radius:10px;font-weight:600;}
+    .btn-gh:hover{background:var(--brand-2);}
+    .about{background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:25px;margin-top:-20px;}
+    .about p{color:#334155;font-size:1em;text-align:justify;}
+    .contact-card{background:linear-gradient(135deg,#0f172a,#1e293b);color:#e2e8f0;border-radius:16px;padding:26px;display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:center;}
+    @media (max-width:720px){.contact-card{grid-template-columns:1fr;}}
+    .contact-left h3{color:var(--brand);margin-bottom:6px;}
+    .contact-left p{color:#cbd5e1;margin-bottom:14px;}
+    .contact-actions a,.contact-actions button{display:inline-flex;align-items:center;gap:8px;background:#0ea5e9;color:#001018;padding:10px 14px;border-radius:10px;font-weight:700;border:none;cursor:pointer;text-decoration:none;margin:6px 6px 0 0;}
+    .contact-actions a:hover,.contact-actions button:hover{filter:brightness(1.05);}
+    .contact-actions .ghost{background:transparent;color:#e2e8f0;border:1.5px solid #334155;}
+    footer{text-align:center;padding:25px 20px;background:var(--nav);color:var(--muted-2);margin-top:60px;}
+    #back-to-top{position:fixed;bottom:25px;right:25px;background:var(--brand);color:#0f172a;padding:10px 15px;border-radius:50%;cursor:pointer;font-weight:bold;display:none;transition:transform .2s;z-index:100;}
+    #back-to-top:hover{transform:scale(1.12);}
   </style>
 </head>
 <body>
 
   <header>
-    <!-- Remplacement par la nouvelle photo -->
     <img src="profile-pic-6.png" alt="Yahya Bougna">
     <h1>Yahya Bougna</h1>
-    <p>Ingénieur Cloud & DevSecOps — je conçois, sécurise et automatise des plateformes de déploiement sur Kubernetes et le Cloud.</p>
+    <p>Ingénieur Cloud & DevSecOps — je conçois, sécurise et automatise des environnements Cloud, CI/CD et IAM.</p>
     <a href="SecOpsCv.pdf" class="btn" download>Télécharger mon CV</a>
   </header>
+
+  <section class="about" id="about">
+    <h2>À propos de moi</h2>
+    <p>
+Ingénieur DevSecOps passionné par la sécurisation des infrastructures Cloud et l’automatisation des pipelines CI/CD.  
+Expérience confirmée dans des environnements hybrides (on-premise & cloud), la gestion des identités (IAM) et la conformité réglementaire (DORA, PSSI).  
+J’ai contribué à la mise en œuvre de politiques de durcissement, de détection proactive et de déploiement sécurisé, en lien avec les meilleures pratiques DevSecOps.  
+Ma vision : rapprocher les mondes du développement, de la sécurité et de l’exploitation pour renforcer la résilience des systèmes.
+    </p>
+  </section>
 
   <nav>
     <a href="#projects">Projets</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- ================== PROJETS (2 projets réels) ================== -->
   <section id="projects">
     <h2>Mes Réalisations</h2>
     <div class="grid">
 
-      <!-- CHATBOT -->
       <div class="card">
         <h3>Chatbot Intelligent Fullstack (MLOps & Cloud)</h3>
         <p>
-Objectif : construire un assistant web avec une chaîne de déploiement simple, reproductible et observable.
-
-• Architecture : React (front) + Node.js/Express (API). Conteneurisation Docker. Déploiement sur Kubernetes (EKS) avec un Ingress pour exposer l’UI.
-• CI/CD : GitHub Actions (lint, tests, build images, push registry, déploiement sur EKS via kubectl). Variables et secrets stockés dans GitHub Secrets.
-• Infra : EKS créé via un module IaC (Terraform) + configuration de base (namespace, RBAC minimal, ingress-nginx).
-• Observabilité : Prometheus + Grafana pour métriques; logs d’app via stdout/`kubectl logs` (stack Loki optionnelle).
-• Sécurité : scan d’images Trivy dans la CI; SonarQube pour l’analyse de code (qualité + vulnérabilités).
+Développement d’un assistant virtuel intelligent complet :
+• Frontend React, backend Node.js/Express, conteneurisation Docker.  
+• Déploiement automatisé sur Kubernetes (EKS) via Terraform et GitHub Actions.  
+• Pipeline CI/CD : linting, tests, build, scans Trivy/SonarQube, déploiement sur EKS.  
+• Monitoring Prometheus, Grafana, logs centralisés via Loki.  
+• Architecture MLOps (MLflow/Airflow) pour entraînement et suivi de modèles ML.
         </p>
-
         <div class="subhead">Technologies utilisées</div>
         <div class="badges">
-          <span>React</span><span>Node.js</span><span>Express</span><span>Docker</span>
-          <span>Kubernetes (EKS)</span><span>Terraform</span><span>GitHub Actions</span>
-          <span>Prometheus</span><span>Grafana</span><span>Trivy</span><span>SonarQube</span>
+          <span>React</span><span>Node.js</span><span>Docker</span><span>Kubernetes (EKS)</span>
+          <span>Terraform</span><span>GitHub Actions</span><span>Prometheus</span>
+          <span>Grafana</span><span>Loki</span><span>Trivy</span><span>SonarQube</span>
         </div>
-        <ul class="clean">
-          <li>Dockerfile multistage (front & API) pour images plus légères</li>
-          <li>Manifests K8s : Deployment, Service, Ingress (+ annotations NGINX)</li>
-          <li>CI : jobs parallèles build/test → scan → deploy (avec conditions sur branche main)</li>
-          <li>Dashboards Grafana simples : latence API, erreurs 4xx/5xx, utilisation CPU/RAM</li>
-        </ul>
-
-        <div class="btn-row">
-          <a class="btn-gh" target="_blank" href="https://github.com/yaya237/chatbot-fullstack">Voir sur GitHub</a>
-        </div>
+        <a class="btn-gh" target="_blank" href="https://github.com/yaya237/chatbot-fullstack">Voir sur GitHub</a>
       </div>
 
-      <!-- NETFLIX -->
       <div class="card">
         <h3>DevSecOps Netflix</h3>
         <p>
-Objectif : démontrer une chaîne DevSecOps de bout en bout pour une appli de type streaming.
-
-• Infrastructure as Code : VPC, sous-réseaux, EKS, IAM de base avec Terraform (séparation plan/apply).
-• Conteneurisation & Orchestration : services packagés en images Docker, déployés via Deployments/Services sur EKS.
-• CI/CD Jenkins : pipeline déclaratif (Jenkinsfile) — build & tests, scan (Trivy, SonarQube, éventuellement ZAP), puis déploiement K8s.
-• Observabilité : Prometheus + Grafana (dashboards pods/API); centralisation des logs possible via OpenSearch/Fluentd.
-• Secrets : variables sensibles externalisées (K8s secrets ou store Jenkins). 
+Mise en place d’un pipeline DevSecOps complet :
+• Infra as Code (Terraform) : VPC, sous-réseaux, EKS, IAM, EC2, S3.  
+• Jenkins CI/CD : Build → Test → Scan (SonarQube, Trivy, OWASP ZAP) → Déploiement Kubernetes.  
+• Sécurité et gestion des secrets via HashiCorp Vault.  
+• Supervision Prometheus, Grafana et centralisation des logs OpenSearch/Fluentd.  
+• Objectif : pipeline sécurisé “Shift Left” et déploiement automatisé Cloud.
         </p>
-
         <div class="subhead">Technologies utilisées</div>
         <div class="badges">
-          <span>AWS</span><span>Terraform</span><span>Docker</span><span>Kubernetes (EKS)</span>
+          <span>AWS</span><span>Terraform</span><span>Kubernetes (EKS)</span><span>Docker</span>
           <span>Jenkins</span><span>SonarQube</span><span>Trivy</span><span>OWASP ZAP</span>
-          <span>Prometheus</span><span>Grafana</span><span>OpenSearch</span><span>Fluentd</span>
+          <span>Vault</span><span>Prometheus</span><span>Grafana</span><span>OpenSearch</span>
         </div>
-        <ul class="clean">
-          <li>Stages CI/CD : <strong>Build</strong> → <strong>Test</strong> → <strong>Analyse</strong> → <strong>Scan</strong> → <strong>Deploy</strong></li>
-          <li>Règles de qualité Sonar (bugs, code smells, duplications)</li>
-          <li>Scan Trivy sur images avant déploiement (fail build si CVE critique)</li>
-          <li>Ingress + autoscaling basique (HPA CPU) pour le front</li>
-        </ul>
+        <a class="btn-gh" target="_blank" href="https://github.com/yaya237/DevSecOps-Netflix">Voir sur GitHub</a>
+      </div>
 
-        <div class="btn-row">
-          <a class="btn-gh" target="_blank" href="https://github.com/yaya237/DevSecOps-Netflix">Voir sur GitHub</a>
-        </div>
+      <div class="card">
+        <h3>Cloud Privé OpenNebula (Teaching Cloud)</h3>
+        <p>
+Conception d’une plateforme Cloud interne pour laboratoires pédagogiques.  
+Automatisation du déploiement via Terraform, Ansible et Vagrant.  
+Monitoring par Zabbix & Grafana, pare-feu OPNSense, gestion multi-VM et réseaux virtuels.  
+Formation à l’administration Cloud et à l’Infrastructure as Code.
+        </p>
+        <div class="badges"><span>OpenNebula</span><span>Terraform</span><span>Ansible</span><span>Vagrant</span><span>Zabbix</span><span>Grafana</span><span>OPNSense</span></div>
+      </div>
+
+      <div class="card">
+        <h3>POC IAM – Keycloak</h3>
+        <p>
+Proof of Concept IAM avec Keycloak pour la gestion centralisée des identités et accès.  
+Configuration des realms, clients et rôles ; tests OAuth2, OpenID Connect, SAML.  
+Déploiement Docker Compose, intégration DORA/RGPD.  
+Objectif : sécuriser l’accès applicatif par SSO.
+        </p>
+        <div class="badges"><span>Keycloak</span><span>IAM</span><span>OAuth2</span><span>OIDC</span><span>SAML</span><span>Docker Compose</span></div>
+      </div>
+
+      <div class="card">
+        <h3>SIEM OpenSearch</h3>
+        <p>
+Développement d’une solution SIEM open-source basée sur OpenSearch & Elastalert.  
+Collecte et corrélation des logs applicatifs, alerting en temps réel.  
+Supervision Prometheus et Grafana pour la corrélation métriques/logs.
+        </p>
+        <div class="badges"><span>OpenSearch</span><span>Elastalert</span><span>Prometheus</span><span>Grafana</span><span>Monitoring</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Datacenter Éducatif</h3>
+        <p>
+Création d’un datacenter pédagogique complet : réseau DHCP, DNS, VLAN, routage, pare-feu OPNSense.  
+Supervision Zabbix & Grafana, automatisation Ansible & Vagrant.  
+Environnement d’apprentissage pour la formation Cloud & Réseau.
+        </p>
+        <div class="badges"><span>Networking</span><span>DHCP</span><span>DNS</span><span>OPNSense</span><span>Zabbix</span><span>Grafana</span><span>Ansible</span></div>
+      </div>
+
+      <div class="card">
+        <h3>InfraLogiciel</h3>
+        <p>
+Développement d’un site web complet en mode Dev & Ops :  
+HTML, CSS, JS, Node.js, automatisation Vagrant & Shell, pipeline CI/CD et déploiement cloud.  
+Apprentissage du cycle complet développement – livraison continue.
+        </p>
+        <div class="badges"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Vagrant</span><span>Git</span><span>CI/CD</span></div>
       </div>
 
     </div>
   </section>
 
-  <!-- ================== CONTACT (UX améliorée) ================== -->
   <section id="contact">
     <h2>Contact</h2>
     <div class="contact-card">
       <div class="contact-left">
         <h3>Échangeons</h3>
-        <p>Intéressé·e par mon profil pour un rôle DevOps / DevSecOps / Cloud ?<br>
-        Je réponds rapidement — et je peux partager du code ou des démos en visio.</p>
-
+        <p>Ouvert aux opportunités en CDI, CDD ou Intérim sur des postes d’Administrateur Système, DevOps, DevSecOps, IAM ou GRC.</p>
         <div class="contact-actions">
-          <a href="mailto:Yahya.bougna@gmail.com" aria-label="Envoyer un email">📧 Envoyer un email</a>
-          <a href="tel:+33626241417" class="ghost" aria-label="Appeler">📞 Appeler</a>
-          <a href="https://github.com/yaya237" target="_blank" class="ghost" aria-label="GitHub">🐙 GitHub</a>
-          <a href="https://www.linkedin.com/in/yahya-bougna-79609a255/" target="_blank" class="ghost" aria-label="LinkedIn">💼 LinkedIn</a>
-        </div>
-
-        <p class="tiny">Email : <span id="mail-val">Yahya.bougna@gmail.com</span> — Tél : <span id="tel-val">+33 6 26 24 14 17</span></p>
-        <div class="contact-actions">
-          <button id="copy-mail">Copier l’email</button>
-          <button id="copy-tel" class="ghost">Copier le téléphone</button>
+          <a href="mailto:Yahya.bougna@gmail.com">📧 Email</a>
+          <a href="tel:+33626241417" class="ghost">📞 Téléphone</a>
+          <a href="https://github.com/yaya237" target="_blank" class="ghost">🐙 GitHub</a>
+          <a href="https://www.linkedin.com/in/yahya-bougna-79609a255/" target="_blank" class="ghost">💼 LinkedIn</a>
         </div>
       </div>
 
       <div>
         <div class="card" style="background:#0b1220;border:1px solid #233044;color:#cbd5e1">
-          <h3 style="color:var(--brand);margin-bottom:8px">Disponibilité</h3>
-          <p>CDI/Projet freelance — Île-de-France (ou télétravail partiel).<br>
-          Intérêts : DevOps, sécurité CI/CD, Kubernetes, AWS.</p>
+          <h3 style="color:var(--brand)">Disponibilité</h3>
+          <p>Recherche active – CDI, CDD, Intérim<br>Fonctions : Administrateur Système, DevOps, DevSecOps, IAM, GRC.</p>
           <div style="margin-top:10px">
-            <span class="pill">Kubernetes</span>
-            <span class="pill">Terraform</span>
-            <span class="pill">Jenkins</span>
-            <span class="pill">Prometheus/Grafana</span>
+            <span class="badges"><span>Kubernetes</span><span>Terraform</span><span>Jenkins</span><span>Prometheus</span><span>Grafana</span></span>
           </div>
         </div>
       </div>
@@ -224,20 +200,8 @@ Objectif : démontrer une chaîne DevSecOps de bout en bout pour une appli de ty
   <div id="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</div>
 
   <script>
-    // bouton top
-    const btnTop = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => { btnTop.style.display = window.scrollY > 300 ? 'block' : 'none'; });
-
-    // copy helpers
-    function copy(text){
-      navigator.clipboard.writeText(text).then(()=>{ 
-        const prev = document.activeElement;
-        if(prev) { prev.blur(); }
-        alert('Copié : ' + text);
-      });
-    }
-    document.getElementById('copy-mail').onclick = () => copy(document.getElementById('mail-val').textContent.trim());
-    document.getElementById('copy-tel').onclick  = () => copy(document.getElementById('tel-val').textContent.trim());
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll',()=>{btn.style.display=window.scrollY>300?'block':'none';});
   </script>
 
 </body>
