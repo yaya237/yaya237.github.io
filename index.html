@@ -7,264 +7,237 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f9fafb;
-      color: #0f172a;
-      line-height: 1.6;
-      scroll-behavior: smooth;
+    :root{
+      --bg:#f9fafb; --text:#0f172a; --muted:#475569; --brand:#64ffda; --brand-2:#52e0b0;
+      --card:#ffffff; --nav:#1e293b; --muted-2:#94a3b8;
     }
+    body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;scroll-behavior:smooth;}
 
-    header {
-      text-align: center;
-      padding: 80px 20px 40px;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: #fff;
-      animation: fadeInDown 1s ease;
+    /* Header */
+    header{
+      text-align:center;padding:80px 20px 40px;background:linear-gradient(135deg,#0f172a,#1e293b);
+      color:#fff;animation:fadeInDown 0.8s ease;
     }
-    header img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      border: 3px solid #64ffda;
-      object-fit: cover;
-      margin-bottom: 15px;
-      transition: transform 0.3s ease;
+    header img{
+      width:140px;height:140px;border-radius:50%;border:3px solid var(--brand);object-fit:cover;
+      margin-bottom:15px;transition:transform .25s ease;
     }
-    header img:hover { transform: scale(1.1); }
-    header h1 { font-size: 2.2em; color: #64ffda; margin-bottom: 8px; }
-    header p { color: #e2e8f0; font-size: 1.1em; max-width: 600px; margin: 0 auto 20px; }
-    .btn-cv, .btn-gh {
-      display: inline-block;
-      background: #64ffda;
-      color: #0f172a;
-      padding: 10px 22px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.3s ease, background 0.3s ease;
-      margin-top: 10px;
+    header img:hover{transform:scale(1.06)}
+    header h1{font-size:2.2em;color:var(--brand);margin-bottom:8px}
+    header p{color:#e2e8f0;font-size:1.05em;max-width:680px;margin:0 auto 18px}
+    .btn{
+      display:inline-block;background:var(--brand);color:#0f172a;padding:11px 22px;border-radius:10px;
+      font-weight:600;text-decoration:none;transition:transform .2s ease,background .2s ease;
     }
-    .btn-cv:hover, .btn-gh:hover {
-      background: #52e0b0;
-      transform: scale(1.05);
-    }
+    .btn:hover{background:var(--brand-2);transform:translateY(-1px)}
 
-    nav {
-      background: #1e293b;
-      text-align: center;
-      padding: 12px 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav a {
-      color: #94a3b8;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { color: #64ffda; }
+    /* Nav */
+    nav{background:var(--nav);text-align:center;padding:12px 0;position:sticky;top:0;z-index:10}
+    nav a{color:var(--muted-2);text-decoration:none;margin:0 20px;font-weight:500;transition:color .2s}
+    nav a:hover{color:var(--brand)}
 
-    section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
+    /* Sections & cards */
+    section{max-width:1000px;margin:60px auto;padding:0 20px}
+    h2{margin-bottom:25px;border-left:4px solid var(--brand);padding-left:10px;font-size:1.6em;animation:fadeInLeft .6s}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
+    .card{
+      background:var(--card);border-radius:14px;padding:22px;box-shadow:0 4px 12px rgba(0,0,0,.08);
+      transition:transform .2s, box-shadow .2s;animation:fadeInUp .6s;
     }
-    h2 {
-      color: #0f172a;
-      margin-bottom: 25px;
-      border-left: 4px solid #64ffda;
-      padding-left: 10px;
-      font-size: 1.6em;
-      animation: fadeInLeft 1s ease;
-    }
+    .card:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(0,0,0,.12)}
+    .card h3{margin-bottom:12px}
+    .card p{color:var(--muted);font-size:.96em;white-space:pre-line}
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
+    /* Tech badges & lists */
+    .badges{margin-top:10px}
+    .badges span{
+      display:inline-block;background:#e0f7f4;color:#083344;padding:4px 10px;margin:3px;border-radius:999px;
+      font-size:.78em;font-weight:600
     }
-    .project-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeInUp 1s ease;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    .project-card h3 { color: #0f172a; margin-bottom: 12px; }
-    .project-card p { color: #475569; font-size: 0.95em; white-space: pre-line; }
-    .tech-badges span {
-      display: inline-block;
-      background: #e0f7f4;
-      color: #0f172a;
-      padding: 3px 8px;
-      margin: 2px;
-      border-radius: 5px;
-      font-size: 0.8em;
-      font-weight: 500;
-    }
+    .subhead{margin-top:14px;margin-bottom:6px;font-weight:700;color:#0f172a}
+    ul.clean{margin-left:18px;color:var(--muted);font-size:.95em}
+    ul.clean li{margin:4px 0}
 
-    footer {
-      text-align: center;
-      padding: 25px 20px;
-      background: #1e293b;
-      color: #94a3b8;
-      margin-top: 60px;
-    }
+    /* Buttons */
+    .btn-row{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn-gh{background:var(--brand);color:#0f172a;text-decoration:none;padding:9px 16px;border-radius:10px;font-weight:600}
+    .btn-gh:hover{background:var(--brand-2)}
 
-    #back-to-top {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #64ffda;
-      color: #0f172a;
-      padding: 10px 15px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-weight: bold;
-      display: none;
-      transition: transform 0.3s ease;
-      z-index: 100;
-    }
-    #back-to-top:hover { transform: scale(1.2); }
+    /* Skills (optionnel : conservé) */
+    .pill{display:inline-block;background:#eef2ff;color:#1e293b;padding:6px 10px;border-radius:10px;margin:6px;font-size:.85em;font-weight:600}
 
-    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+    /* Contact */
+    .contact-card{
+      background:linear-gradient(135deg,#0f172a,#1e293b);color:#e2e8f0;border-radius:16px;padding:26px;
+      display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:center;
+    }
+    @media (max-width:720px){.contact-card{grid-template-columns:1fr}}
+    .contact-left h3{color:var(--brand);margin-bottom:6px}
+    .contact-left p{color:#cbd5e1;margin-bottom:14px}
+    .contact-actions a,.contact-actions button{
+      display:inline-flex;align-items:center;gap:8px;background:#0ea5e9;color:#001018;padding:10px 14px;border-radius:10px;
+      font-weight:700;border:none;cursor:pointer;text-decoration:none;margin-right:10px;margin-top:6px
+    }
+    .contact-actions a:hover,.contact-actions button:hover{filter:brightness(1.05)}
+    .contact-actions .ghost{background:transparent;color:#e2e8f0;border:1.5px solid #334155}
+    .tiny{font-size:.9em;color:#94a3b8}
+
+    footer{text-align:center;padding:25px 20px;background:var(--nav);color:var(--muted-2);margin-top:60px}
+
+    #back-to-top{
+      position:fixed;bottom:25px;right:25px;background:var(--brand);color:#0f172a;padding:10px 15px;border-radius:50%;
+      cursor:pointer;font-weight:bold;display:none;transition:transform .2s;z-index:100;
+    }
+    #back-to-top:hover{transform:scale(1.12)}
+
+    @keyframes fadeInDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeInLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
   </style>
 </head>
 <body>
 
   <header>
-    <img src="IMG_1671.jpg" alt="Yahya Bougna">
+    <!-- Remplacement par la nouvelle photo -->
+    <img src="profile-pic-6.png" alt="Yahya Bougna">
     <h1>Yahya Bougna</h1>
-    <p>Ingénieur passionné par le Cloud, la cybersécurité et le DevSecOps.</p>
-    <a href="SecOpsCv.pdf" class="btn-cv" download>Télécharger mon CV</a>
+    <p>Ingénieur Cloud & DevSecOps — je conçois, sécurise et automatise des plateformes de déploiement sur Kubernetes et le Cloud.</p>
+    <a href="SecOpsCv.pdf" class="btn" download>Télécharger mon CV</a>
   </header>
 
   <nav>
     <a href="#projects">Projets</a>
-    <a href="#skills">Compétences</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- ================== PROJETS ================== -->
+  <!-- ================== PROJETS (2 projets réels) ================== -->
   <section id="projects">
     <h2>Mes Réalisations</h2>
-    <div class="projects">
+    <div class="grid">
 
-      <div class="project-card">
+      <!-- CHATBOT -->
+      <div class="card">
         <h3>Chatbot Intelligent Fullstack (MLOps & Cloud)</h3>
         <p>
-Développement complet d’un assistant virtuel intelligent combinant une interface React (frontend) et un backend Node.js, déployé sur Kubernetes (EKS).
-Pipeline CI/CD automatisé (GitHub Actions) intégrant build, tests, scans (Trivy, SonarQube) et déploiement cloud (AWS, Azure).
-Architecture MLOps : MLflow & Airflow pour entraînement, déploiement et suivi des modèles ML.  
-Monitoring via Prometheus, Grafana et Loki.
+Objectif : construire un assistant web avec une chaîne de déploiement simple, reproductible et observable.
+
+• Architecture : React (front) + Node.js/Express (API). Conteneurisation Docker. Déploiement sur Kubernetes (EKS) avec un Ingress pour exposer l’UI.
+• CI/CD : GitHub Actions (lint, tests, build images, push registry, déploiement sur EKS via kubectl). Variables et secrets stockés dans GitHub Secrets.
+• Infra : EKS créé via un module IaC (Terraform) + configuration de base (namespace, RBAC minimal, ingress-nginx).
+• Observabilité : Prometheus + Grafana pour métriques; logs d’app via stdout/`kubectl logs` (stack Loki optionnelle).
+• Sécurité : scan d’images Trivy dans la CI; SonarQube pour l’analyse de code (qualité + vulnérabilités).
         </p>
-        <a href="https://github.com/yaya237/chatbot-fullstack" target="_blank" class="btn-gh">Voir sur GitHub</a>
+
+        <div class="subhead">Technologies utilisées</div>
+        <div class="badges">
+          <span>React</span><span>Node.js</span><span>Express</span><span>Docker</span>
+          <span>Kubernetes (EKS)</span><span>Terraform</span><span>GitHub Actions</span>
+          <span>Prometheus</span><span>Grafana</span><span>Trivy</span><span>SonarQube</span>
+        </div>
+        <ul class="clean">
+          <li>Dockerfile multistage (front & API) pour images plus légères</li>
+          <li>Manifests K8s : Deployment, Service, Ingress (+ annotations NGINX)</li>
+          <li>CI : jobs parallèles build/test → scan → deploy (avec conditions sur branche main)</li>
+          <li>Dashboards Grafana simples : latence API, erreurs 4xx/5xx, utilisation CPU/RAM</li>
+        </ul>
+
+        <div class="btn-row">
+          <a class="btn-gh" target="_blank" href="https://github.com/yaya237/chatbot-fullstack">Voir sur GitHub</a>
+        </div>
       </div>
 
-      <div class="project-card">
+      <!-- NETFLIX -->
+      <div class="card">
         <h3>DevSecOps Netflix</h3>
         <p>
-Pipeline DevSecOps complet pour un site de streaming inspiré de Netflix hébergé sur AWS.
-Infrastructure as Code avec Terraform (VPC, EKS, IAM, S3, EC2), CI/CD Jenkins (build, tests, scans de sécurité avec SonarQube, Trivy, OWASP ZAP).
-Monitoring & observabilité via Prometheus, Grafana, OpenSearch (Fluentd) et gestion des secrets HashiCorp Vault.
-        </p>
-        <a href="https://github.com/yaya237/DevSecOps-Netflix" target="_blank" class="btn-gh">Voir sur GitHub</a>
-      </div>
+Objectif : démontrer une chaîne DevSecOps de bout en bout pour une appli de type streaming.
 
-      <div class="project-card">
-        <h3>Cloud Privé OpenNebula (Teaching Cloud)</h3>
-        <p>
-Déploiement d’une infrastructure cloud privée pour laboratoires pédagogiques avec OpenNebula.
-Automatisation via Terraform, Vagrant et Ansible ; supervision Zabbix & Grafana ; sécurité réseau OPNSense.
-Projet visant à fournir un environnement éducatif cloud-like (AWS/Azure) pour la formation DevOps.
+• Infrastructure as Code : VPC, sous-réseaux, EKS, IAM de base avec Terraform (séparation plan/apply).
+• Conteneurisation & Orchestration : services packagés en images Docker, déployés via Deployments/Services sur EKS.
+• CI/CD Jenkins : pipeline déclaratif (Jenkinsfile) — build & tests, scan (Trivy, SonarQube, éventuellement ZAP), puis déploiement K8s.
+• Observabilité : Prometheus + Grafana (dashboards pods/API); centralisation des logs possible via OpenSearch/Fluentd.
+• Secrets : variables sensibles externalisées (K8s secrets ou store Jenkins). 
         </p>
-        <a href="https://github.com/yaya237/PFE-opennebula" target="_blank" class="btn-gh">Voir sur GitHub</a>
-      </div>
 
-      <div class="project-card">
-        <h3>POC Keycloak & Gouvernance IAM</h3>
-        <p>
-Mise en place d’un Proof of Concept IAM avec Keycloak pour centraliser l’authentification et la gestion des accès.
-Configuration de realms, clients, rôles et policies, intégration OAuth2, OpenID Connect, SAML.
-Déploiement Docker Compose et alignement DORA/RGPD.
-        </p>
-        <a href="https://github.com/yaya237/Keycloak-IAM" target="_blank" class="btn-gh">Voir sur GitHub</a>
-      </div>
+        <div class="subhead">Technologies utilisées</div>
+        <div class="badges">
+          <span>AWS</span><span>Terraform</span><span>Docker</span><span>Kubernetes (EKS)</span>
+          <span>Jenkins</span><span>SonarQube</span><span>Trivy</span><span>OWASP ZAP</span>
+          <span>Prometheus</span><span>Grafana</span><span>OpenSearch</span><span>Fluentd</span>
+        </div>
+        <ul class="clean">
+          <li>Stages CI/CD : <strong>Build</strong> → <strong>Test</strong> → <strong>Analyse</strong> → <strong>Scan</strong> → <strong>Deploy</strong></li>
+          <li>Règles de qualité Sonar (bugs, code smells, duplications)</li>
+          <li>Scan Trivy sur images avant déploiement (fail build si CVE critique)</li>
+          <li>Ingress + autoscaling basique (HPA CPU) pour le front</li>
+        </ul>
 
-      <div class="project-card">
-        <h3>SIEM & Détection d’incidents (OpenSearch)</h3>
-        <p>
-Mise en place d’un SIEM open-source basé sur OpenSearch et Elastalert pour la détection proactive d’incidents.
-Collecte et corrélation de logs, intégration Prometheus & Grafana pour la supervision temps réel.
-        </p>
+        <div class="btn-row">
+          <a class="btn-gh" target="_blank" href="https://github.com/yaya237/DevSecOps-Netflix">Voir sur GitHub</a>
+        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ================== COMPETENCES ================== -->
-  <section id="skills">
-    <h2>Compétences techniques</h2>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:25px;">
-      <div class="project-card">
-        <h3>🌩️ Cloud & Infra</h3>
-        <p>AWS (EKS, S3, IAM), Azure (AKS), OpenNebula, Terraform, Ansible, Vagrant, OPNSense, VMware.</p>
-      </div>
-      <div class="project-card">
-        <h3>⚙️ DevOps & CI/CD</h3>
-        <p>Jenkins, GitHub Actions, Docker, Kubernetes, GitOps, Helm, Prometheus, Grafana.</p>
-      </div>
-      <div class="project-card">
-        <h3>🧠 Sécurité & DevSecOps</h3>
-        <p>Trivy, SonarQube, OWASP ZAP, Vault, OpenSearch, RGPD, DORA, ISO 27001.</p>
-      </div>
-      <div class="project-card">
-        <h3>🔐 IAM & Gouvernance</h3>
-        <p>Keycloak, Syncope, OAuth2, SAML, OIDC, gestion des rôles & accès multi-cloud.</p>
-      </div>
-      <div class="project-card">
-        <h3>💻 Développement</h3>
-        <p>Python, JavaScript, Bash, React, Node.js, API REST, Git/GitLab.</p>
-      </div>
-      <div class="project-card">
-        <h3>🤖 MLOps</h3>
-        <p>MLflow, Airflow, CI/CD pour modèles ML, monitoring & retraining.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================== CONTACT ================== -->
+  <!-- ================== CONTACT (UX améliorée) ================== -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:Yahya.bougna@gmail.com">Yahya.bougna@gmail.com</a></p>
-    <p>Téléphone: +33 6 26 24 14 17</p>
-    <p>Suivez-moi: 
-      <a href="https://github.com/yaya237" target="_blank">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/yahya-bougna-79609a255/" target="_blank">LinkedIn</a>
-    </p>
+    <div class="contact-card">
+      <div class="contact-left">
+        <h3>Échangeons</h3>
+        <p>Intéressé·e par mon profil pour un rôle DevOps / DevSecOps / Cloud ?<br>
+        Je réponds rapidement — et je peux partager du code ou des démos en visio.</p>
+
+        <div class="contact-actions">
+          <a href="mailto:Yahya.bougna@gmail.com" aria-label="Envoyer un email">📧 Envoyer un email</a>
+          <a href="tel:+33626241417" class="ghost" aria-label="Appeler">📞 Appeler</a>
+          <a href="https://github.com/yaya237" target="_blank" class="ghost" aria-label="GitHub">🐙 GitHub</a>
+          <a href="https://www.linkedin.com/in/yahya-bougna-79609a255/" target="_blank" class="ghost" aria-label="LinkedIn">💼 LinkedIn</a>
+        </div>
+
+        <p class="tiny">Email : <span id="mail-val">Yahya.bougna@gmail.com</span> — Tél : <span id="tel-val">+33 6 26 24 14 17</span></p>
+        <div class="contact-actions">
+          <button id="copy-mail">Copier l’email</button>
+          <button id="copy-tel" class="ghost">Copier le téléphone</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="card" style="background:#0b1220;border:1px solid #233044;color:#cbd5e1">
+          <h3 style="color:var(--brand);margin-bottom:8px">Disponibilité</h3>
+          <p>CDI/Projet freelance — Île-de-France (ou télétravail partiel).<br>
+          Intérêts : DevOps, sécurité CI/CD, Kubernetes, AWS.</p>
+          <div style="margin-top:10px">
+            <span class="pill">Kubernetes</span>
+            <span class="pill">Terraform</span>
+            <span class="pill">Jenkins</span>
+            <span class="pill">Prometheus/Grafana</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    © 2025 Yahya Bougna. Tous droits réservés.
-  </footer>
+  <footer>© 2025 Yahya Bougna. Tous droits réservés.</footer>
 
   <div id="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</div>
 
   <script>
-    const btn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
+    // bouton top
+    const btnTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => { btnTop.style.display = window.scrollY > 300 ? 'block' : 'none'; });
+
+    // copy helpers
+    function copy(text){
+      navigator.clipboard.writeText(text).then(()=>{ 
+        const prev = document.activeElement;
+        if(prev) { prev.blur(); }
+        alert('Copié : ' + text);
+      });
+    }
+    document.getElementById('copy-mail').onclick = () => copy(document.getElementById('mail-val').textContent.trim());
+    document.getElementById('copy-tel').onclick  = () => copy(document.getElementById('tel-val').textContent.trim());
   </script>
 
 </body>
